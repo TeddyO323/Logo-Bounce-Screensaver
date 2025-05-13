@@ -1,0 +1,73 @@
+body {
+    overflow: hidden;
+    background-color: #111;
+    height: 100vh;
+    margin: 0;
+}
+
+#dvd-logo {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    transition: transform 0.1s linear;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.color-transition {
+    animation: colorChange 10s infinite linear;
+}
+
+@keyframes colorChange {
+    0% { fill: #FF0000; }
+    14% { fill: #FF7F00; }
+    28% { fill: #FFFF00; }
+    42% { fill: #00FF00; }
+    56% { fill: #0000FF; }
+    70% { fill: #4B0082; }
+    84% { fill: #9400D3; }
+    100% { fill: #FF0000; }
+}
+
+.trail {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+#corner-hit {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    font-family: monospace;
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+#controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    font-family: sans-serif;
+}
+
+button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVD Logo Bounce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="dvd-logo" class="color-transition">
+        <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="120" height="60" fill="none" stroke="currentColor" stroke-width="2"/>
+            <text x="60" y="38" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="currentColor">DVD</text>
+        </svg>
+    </div>
+    
+    <div id="corner-hit">Corner hits: 0</div>
+    
+    <div id="controls">
+        <div>DVD Logo Bounce</div>
+        <button id="add-logo">Add Logo</button>
+        <button id="remove-logo">Remove Logo</button>
+        <button id="add-trails">Add Trails</button>
+        <button id="clear-trails">Clear Trails</button>
+        <button id="speed-up">Speed +</button>
+        <button id="slow-down">Speed -</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
