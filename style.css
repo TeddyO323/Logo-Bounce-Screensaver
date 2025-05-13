@@ -1,155 +1,73 @@
-     body {
-            overflow: hidden;
-            background-color: #111;
-            height: 100vh;
-            margin: 0;
-        }
-        
-        #dvd-logo {
-            position: absolute;
-            width: 120px;
-            height: 60px;
-            transition: transform 0.1s linear;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
-            z-index: 10;
-        }
-        
-        .color-transition {
-            animation: colorChange 10s infinite linear;
-        }
-        
-        @keyframes colorChange {
-            0% { fill: #FF0000; }
-            14% { fill: #FF7F00; }
-            28% { fill: #FFFF00; }
-            42% { fill: #00FF00; }
-            56% { fill: #0000FF; }
-            70% { fill: #4B0082; }
-            84% { fill: #9400D3; }
-            100% { fill: #FF0000; }
-        }
-        
-        .trail {
-            position: absolute;
-            width: 120px;
-            height: 60px;
-            opacity: 0.3;
-            pointer-events: none;
-            z-index: 5;
-        }
-        
-        #corner-hit {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            color: white;
-            font-family: monospace;
-            font-size: 1.5rem;
-            opacity: 0.8;
-            text-shadow: 0 0 5px #fff;
-            z-index: 100;
-        }
-        
-        #controls {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 8px;
-            color: white;
-            font-family: sans-serif;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        button {
-            background: #333;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            margin: 5px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        button:hover {
-            background: #555;
-            transform: scale(1.05);
-        }
-        
-        /* Fireworks */
-        .firework {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            box-shadow: 0 0 10px 2px;
-            animation: firework-animation 1s ease-out forwards;
-            z-index: 20;
-        }
-        
-        @keyframes firework-animation {
-            0% { transform: translate(0, 0); opacity: 1; }
-            100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
-        }
-        
-        /* Corner hit effect */
-        .corner-effect {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
-            animation: corner-effect 0.5s ease-out forwards;
-            z-index: 15;
-        }
-        
-        @keyframes corner-effect {
-            0% { transform: scale(0.5); opacity: 1; }
-            100% { transform: scale(2); opacity: 0; }
-        }
-        
-        /* Screen shake */
-        @keyframes screen-shake {
-            0%, 100% { transform: translate(0, 0); }
-            10%, 30%, 50%, 70%, 90% { transform: translate(-5px, -5px); }
-            20%, 40%, 60%, 80% { transform: translate(5px, 5px); }
-        }
-        
-        /* Score popup */
-        .score-popup {
-            position: absolute;
-            color: white;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-            font-size: 24px;
-            text-shadow: 0 0 5px currentColor;
-            animation: score-popup 1s ease-out forwards;
-            z-index: 30;
-        }
-        
-        @keyframes score-popup {
-            0% { transform: translate(0, 0) scale(0.5); opacity: 0; }
-            50% { transform: translate(0, -50px) scale(1.2); opacity: 1; }
-            100% { transform: translate(0, -100px) scale(0.8); opacity: 0; }
-        }
-        
-        /* Background particles */
-        .bg-particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            animation: bg-particle-animation linear infinite;
-        }
-        
-        @keyframes bg-particle-animation {
-            0% { transform: translateY(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(100vh); opacity: 0; }
-        }
+body {
+    overflow: hidden;
+    background-color: #111;
+    height: 100vh;
+    margin: 0;
+}
+
+#dvd-logo {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    transition: transform 0.1s linear;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.color-transition {
+    animation: colorChange 10s infinite linear;
+}
+
+@keyframes colorChange {
+    0% { fill: #FF0000; }
+    14% { fill: #FF7F00; }
+    28% { fill: #FFFF00; }
+    42% { fill: #00FF00; }
+    56% { fill: #0000FF; }
+    70% { fill: #4B0082; }
+    84% { fill: #9400D3; }
+    100% { fill: #FF0000; }
+}
+
+.trail {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+#corner-hit {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    font-family: monospace;
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+#controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    font-family: sans-serif;
+}
+
+button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
