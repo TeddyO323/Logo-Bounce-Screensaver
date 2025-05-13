@@ -1,7 +1,7 @@
 
 ## 📸 Preview
 
-![DVD Logo Bounce Screenshot](Recording 2025-05-13 192002.gif) 
+![DVD Logo Bounce Screenshot](Recording2025-05-13192002.gif) <sup>*Sample screenshot — add your own preview image if hosting on GitHub Pages or similar.*</sup>
 
 ---
 
