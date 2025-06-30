@@ -19,7 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
     function animate() {
         posX += speedX;
         posY += speedY;
-        
+// Track used colors to avoid repeats
+let usedColors = new Set();
+let lastColor = null;
+
+// Get a new unused color
+function getNewColor() {
+    const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#00FFFF', '#87CEEB', '#98FB98', '#DDA0DD', '#F0E68C', '#CD853F', '#FA8072', '#20B2AA', '#FF69B4', '#FFB6C1', '#FFA07A',
+                   '#0000FF', '#4B0082', '#9400D3', '#FF00FF', '#FF007F'];
+    
+    // If all colors have been used, reset the used colors set
+    if (usedColors.size >= colors.length) {
+        usedColors.clear();
+        if (lastColor) usedColors.add(lastColor); // Keep track of the last color to avoid immediate repeat
+    }
+    
+    // Find a color that hasn't been used
+    let newColor;
+    do {
+        newColor = colors[Math.floor(Math.random() * colors.length)];
+    } while (usedColors.has(newColor));
+    
+    usedColors.add(newColor);
+    lastColor = newColor;
+    return newColor;
+}
         // Check for wall collisions
         if (posX <= 0 || posX >= window.innerWidth - 120) {
             speedX = -speedX;
@@ -71,8 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function changeColor() {
-        const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', 
-                       '#0000FF', '#4B0082', '#9400D3'];
+        const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#00FFFF', '#87CEEB', '#98FB98', '#DDA0DD', '#F0E68C', '#CD853F', '#FA8072', '#20B2AA', '#FF69B4', '#FFB6C1', '#FFA07A',
+                       '#0000FF', '#4B0082', '#9400D3', '#FF00FF', '#FF007F'];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         
         logos.forEach(logo => {

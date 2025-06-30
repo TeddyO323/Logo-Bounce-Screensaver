@@ -3,6 +3,10 @@ body {
     background-color: #111;
     height: 100vh;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 #dvd-logo {
@@ -11,6 +15,7 @@ body {
     height: 60px;
     transition: transform 0.1s linear;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+    
 }
 
 .color-transition {
@@ -26,6 +31,42 @@ body {
     70% { fill: #4B0082; }
     84% { fill: #9400D3; }
     100% { fill: #FF0000; }
+    114% { fill: #FF7F00; }
+    128% { fill: #FFFF00; }
+    142% { fill: #00FF00; }
+    156% { fill: #00FFFF; }
+    170% { fill: #87CEEB; }
+    184% { fill: #98FB98; }
+    200% { fill: #DDA0DD; }
+    214% { fill: #F0E68C; }
+    228% { fill: #CD853F; }
+    242% { fill: #FA8072; }
+    256% { fill: #20B2AA; }
+    270% { fill: #FF69B4; }
+    284% { fill: #FFB6C1; }
+    300% { fill: #FFA07A; }
+    314% { fill: #0000FF; }
+    328% { fill: #4B0082; }
+    342% { fill: #9400D3; }
+    356% { fill: #FF00FF; }
+    370% { fill: #FF007F; }
+    384% { fill: #87CEEB; }
+    400% { fill: #98FB98; }
+    414% { fill: #DDA0DD; }
+    428% { fill: #F0E68C; }
+    442% { fill: #CD853F; }
+    456% { fill: #FA8072; }
+    470% { fill: #20B2AA; }
+    484% { fill: #FF69B4; }
+    500% { fill: #FFB6C1; }
+    514% { fill: #FFA07A; }
+    528% { fill: #0000FF; }
+    542% { fill: #4B0082; }
+    556% { fill: #9400D3; }
+    570% { fill: #FF00FF; }
+    584% { fill: #FF007F; }
+    600% { fill: #87CEEB; }
+
 }
 
 .trail {
@@ -34,6 +75,8 @@ body {
     height: 60px;
     opacity: 0.3;
     pointer-events: none;
+    transition: transform 0.1s linear;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
 }
 
 #corner-hit {
@@ -56,6 +99,7 @@ body {
     border-radius: 8px;
     color: white;
     font-family: sans-serif;
+    
 }
 
 button {
@@ -66,8 +110,12 @@ button {
     margin: 5px;
     border-radius: 4px;
     cursor: pointer;
+
 }
 
 button:hover {
     background: #555;
+    transform: scale(1.1);
+    transition: transform 0.1s linear;
+
 }

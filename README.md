@@ -10,6 +10,7 @@ A fun, nostalgic animation project that recreates the classic bouncing DVD logo,
 
 ---
 
+
 ## Live Page
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://teddyo323.github.io/Logo-Bounce-Screensaver/)
