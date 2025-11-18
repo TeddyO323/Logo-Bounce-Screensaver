@@ -16,16 +16,46 @@
     </div>
     
     <div id="corner-hit">Corner hits: 0</div>
-    
-    <div id="controls">
-        <div>DVD Logo Bounce</div>
-        <button id="add-logo">Add Logo</button>
-        <button id="remove-logo">Remove Logo</button>
-        <button id="add-trails">Add Trails</button>
-        <button id="clear-trails">Clear Trails</button>
-        <button id="speed-up">Speed +</button>
-        <button id="slow-down">Speed -</button>
-    </div>
+<div id="controls" class="floating">
+    <div class="title">DVD Logo Bounce</div>
+
+    <button class="control-btn" id="add-logo">
+        Add Logo <span class="key-hint">+</span>
+    </button>
+
+    <button class="control-btn" id="remove-logo">
+        Remove Logo <span class="key-hint">−</span>
+    </button>
+
+    <button class="control-btn" id="add-trails">
+        Add Trails
+    </button>
+
+    <button class="control-btn" id="clear-trails">
+        Clear Trails
+    </button>
+
+    <button class="control-btn" id="speed-up">
+        Speed + <span class="key-hint">↑</span>
+    </button>
+
+    <button class="control-btn" id="slow-down">
+        Speed − <span class="key-hint">↓</span>
+    </button>
+
+    <button class="control-btn" id="fullscreen-toggle">
+        Full Screen <span class="key-hint">F</span>
+    </button>
+
+    <button class="control-btn danger" id="hide-controls">
+        Hide Controls <span class="key-hint">H</span>
+    </button>
+</div>
+
+<button id="show-controls" style="display:none;">
+    Show Controls <span class="key-hint">H</span>
+</button>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -171,4 +171,97 @@ function getNewColor() {
     
     // Initial color
     changeColor();
+// --- FULLSCREEN TOGGLE ---
+const fullscreenBtn = document.getElementById("fullscreen-toggle");
+
+fullscreenBtn.addEventListener("click", () => {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+});
+
+document.addEventListener("fullscreenchange", () => {
+    fullscreenBtn.textContent = document.fullscreenElement
+        ? "Exit Full Screen"
+        : "Full Screen";
+});
+
+
+// --- HIDE / SHOW CONTROLS ---
+const controls = document.getElementById("controls");
+const showControlsBtn = document.getElementById("show-controls");
+const hideControlsBtn = document.getElementById("hide-controls");
+
+hideControlsBtn.addEventListener("click", () => {
+    controls.style.display = "none";
+    showControlsBtn.style.display = "block";
+});
+
+showControlsBtn.addEventListener("click", () => {
+    controls.style.display = "block";
+    showControlsBtn.style.display = "none";
+});
+/********************************************
+ * KEYBOARD SHORTCUTS
+ ********************************************/
+document.addEventListener("keydown", (e) => {
+    const key = e.key.toLowerCase();
+
+    switch (key) {
+        case "f": // fullscreen toggle
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+            break;
+
+        case "h": // hide / show controls
+            if (controls.style.display !== "none") {
+                hideControlsBtn.click();
+            } else {
+                showControlsBtn.click();
+            }
+            break;
+
+        case "+": // add logo
+            document.getElementById("add-logo").click();
+            break;
+
+        case "-": // remove logo
+            document.getElementById("remove-logo").click();
+            break;
+
+        case "arrowup":
+            document.getElementById("speed-up").click();
+            break;
+
+        case "arrowdown":
+            document.getElementById("slow-down").click();
+            break;
+    }
+});
+/********************************************
+ * DOUBLE TAP FULLSCREEN
+ ********************************************/
+let lastTapTime = 0;
+
+document.addEventListener("click", () => {
+    const now = Date.now();
+    const timeSinceLast = now - lastTapTime;
+
+    if (timeSinceLast < 300) {
+        // Trigger fullscreen toggle
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            document.exitFullscreen();
+        }
+    }
+
+    lastTapTime = now;
+});
+
 });

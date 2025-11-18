@@ -46,19 +46,87 @@ body {
     opacity: 0.8;
     
 }
-
-#controls {
+/* Floating transparent control panel */
+#controls.floating {
     position: fixed;
     top: 20px;
-    left: 20px;
-    z-index: 100;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
+    right: 20px;
+    z-index: 150;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 15px;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#controls .title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #5ce1ff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 6px rgba(0,255,255,0.4);
+}
+
+/* Cleaner button styling */
+.control-btn {
+    background: rgba(0,0,0,0.5);
+    color: #f2f2f2;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 7px 12px;
+    border-radius: 6px;
+    margin: 6px 0;
+    font-size: 0.9rem;
+    width: 160px;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.control-btn:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateX(4px);
+}
+
+.control-btn.danger {
+    background: rgba(90,0,0,0.5);
+    border-color: rgba(255,50,50,0.2);
+}
+
+.control-btn.danger:hover {
+    background: rgba(150,0,0,0.6);
+}
+
+/* "Show Controls" button floating */
+#show-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 12px;
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 8px;
     color: white;
-    font-family: sans-serif;
-
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s ease;
 }
+
+#show-controls:hover {
+    background: rgba(255,255,255,0.15);
+}
+.key-hint {
+    background: rgba(255,255,255,0.15);
+    padding: 2px 6px;
+    margin-left: 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    border: 1px solid rgba(255,255,255,0.2);
+    display: inline-block;
+}
+
 
 button {
     background: #333;
